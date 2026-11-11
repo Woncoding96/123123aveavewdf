@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>반배정</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1 id="title">반배정</h1>
+  <section id="step-file">
+    <h2>1. 양식 파일 불러오기</h2>
+    <div id="drop">반배정 양식 엑셀 파일을 여기에 끌어다 놓거나, 클릭해서 선택하세요.</div>
+    <input type="file" id="file" accept=".xlsx" hidden>
+    <p id="file-info" class="muted"></p>
+  </section>
+  <section id="step-settings" class="disabled">
+    <h2>2. 배정 설정</h2>
+    <label>새 학급 수 <input type="number" id="class-count" min="1" step="1" style="width:5em"></label>
+    <div class="criteria" id="criteria"></div>
+    <p class="muted">반별 인원 차이는 항상 1명 이내로 맞추고, 분리·묶음 조건은 항상 지킵니다.</p>
+  </section>
+  <section id="step-check" class="disabled">
+    <h2>3. 입력 점검</h2>
+    <div id="check"></div>
+  </section>
+  <section id="step-plans" class="disabled">
+    <h2>4. 배정안 비교 · 저장</h2>
+    <button class="primary" id="assign" disabled>배정하기</button>
+    <p id="assign-msg" class="fail"></p>
+    <div id="plans"></div>
+    <div id="detail"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
